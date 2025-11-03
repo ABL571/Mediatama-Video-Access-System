@@ -70,7 +70,7 @@ php artisan serve
 🔐 Akun Demo
 Role	Email	Password
 👑 Admin	admin@example.com
-	123456
+	password
 👤 Customer	customer@example.com
 	123456
 
