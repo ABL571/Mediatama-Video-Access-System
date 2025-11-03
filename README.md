@@ -35,7 +35,43 @@ Aplikasi ini dibuat menggunakan **Laravel 10**, **Bootstrap 5**, dan **MySQL (XA
 
 ## ⚙️ Cara Menjalankan Project di Lokal
 
-### 1️⃣ Clone Repository
+1️⃣ Clone Repository
 ```bash
 git clone https://github.com/ABL571/Mediatama-Video-Access-System.git
 cd Mediatama-Video-Access-System
+
+2️⃣ Install Dependency PHP
+composer install
+
+3️⃣ Copy File .env
+copy .env.example .env
+Lalu buka file .env dan sesuaikan koneksi database (contoh untuk XAMPP):
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=mediatama
+DB_USERNAME=root
+DB_PASSWORD=
+
+4️⃣ Buat Database Baru
+Buka http://localhost/phpmyadmin
+Klik New → buat database bernama mediatama
+
+5️⃣ Generate App Key
+php artisan key:generate
+
+6️⃣ Migrasi & Seeder (Buat Tabel dan Data Contoh)
+php artisan migrate --seed
+
+7️⃣ Jalankan Server
+php artisan serve
+
+
+🔐 Akun Demo
+Role	Email	Password
+👑 Admin	admin@example.com
+	123456
+👤 Customer	customer@example.com
+	123456
+
+Jika akun di atas tidak tersedia, buat akun baru via /register lalu ubah role di tabel users (phpMyAdmin).
